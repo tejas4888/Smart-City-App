@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.gms.common.SignInButton
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_google_sign_in"/>
+
+</LinearLayout>
