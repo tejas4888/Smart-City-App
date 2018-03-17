@@ -74,10 +74,13 @@ public class MainActivity extends AppCompatActivity
         TextView navUsername = (TextView) headerView.findViewById(R.id.nav_header_name);
         TextView navEmail = (TextView) headerView.findViewById(R.id.nav_header_email);
         ImageView navImage = (ImageView) headerView.findViewById(R.id.nav_header_image);
-        navUsername.setText(firebaseAuth.getCurrentUser().getDisplayName());
-        navEmail.setText(firebaseAuth.getCurrentUser().getEmail());
-        firebaseAuth.getCurrentUser().getPhotoUrl();
-        Picasso.get().load(firebaseAuth.getCurrentUser().getPhotoUrl()).into(navImage);
+
+        try{
+            navUsername.setText(firebaseAuth.getCurrentUser().getDisplayName());
+            navEmail.setText(firebaseAuth.getCurrentUser().getEmail());
+            Picasso.get().load(firebaseAuth.getCurrentUser().getPhotoUrl()).into(navImage);
+        }catch (Exception e) {        }
+
     }
 
     @Override
