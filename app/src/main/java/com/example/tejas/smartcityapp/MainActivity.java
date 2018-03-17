@@ -1,6 +1,7 @@
 package com.example.tejas.smartcityapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,8 +14,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.tejas.smartcityapp.HelperClasses.AppConstants;
 import com.google.firebase.auth.FirebaseAuth;
+import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -45,11 +50,34 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
         firebaseAuth = FirebaseAuth.getInstance();
+
         if(firebaseAuth.getCurrentUser() == null){
             finish();
             startActivity(new Intent(this, LoginActivity.class));
         }
+        else
+        {
+            SharedPreferences prefs = getSharedPreferences(AppConstants.LOGIN_PREFS, MODE_PRIVATE);
+            String form_status = prefs.getString(firebaseAuth.getCurrentUser().getEmail(), "0");
+
+            if (form_status.equals("0"))
+            {
+                firebaseAuth.signOut();
+                finish();
+                startActivity(new Intent(this, LoginActivity.class));
+            }
+        }
+
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUsername = (TextView) headerView.findViewById(R.id.nav_header_name);
+        TextView navEmail = (TextView) headerView.findViewById(R.id.nav_header_email);
+        ImageView navImage = (ImageView) headerView.findViewById(R.id.nav_header_image);
+        navUsername.setText(firebaseAuth.getCurrentUser().getDisplayName());
+        navEmail.setText(firebaseAuth.getCurrentUser().getEmail());
+        firebaseAuth.getCurrentUser().getPhotoUrl();
+        Picasso.get().load(firebaseAuth.getCurrentUser().getPhotoUrl()).into(navImage);
     }
 
     @Override
@@ -77,8 +105,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_signout) {
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -101,15 +131,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
-            firebaseAuth.signOut();
-            //closing activity
-            finish();
-            //starting login activity
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

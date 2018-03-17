@@ -5,6 +5,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.google.android.gms.common.SignInButton
+        android:layout_marginTop="300dp"
+        android:layout_gravity="center_horizontal"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/login_google_sign_in"/>

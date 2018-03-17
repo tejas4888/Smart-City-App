@@ -1,0 +1,7 @@
+1. Created table oc_users 
+	Attributes: user_id INT PRIMARY AUTO_INCREMENT
+		    user_name, user_email VARCHAR 500
+		    user_contact VARCHAR 10
+
+2. Created table oc_citizen, oc_organisation, oc_technical_org, oc_financial_org, oc_infrastructure_org, oc_research_institute, oc_foreign_org WITH ONLY ONE COLUMN:
+	user_id: FOREIGN KEY TO oc_users(user_id)
