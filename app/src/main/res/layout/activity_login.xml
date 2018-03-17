@@ -2,12 +2,46 @@
 <LinearLayout android:orientation="vertical"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/smartcity"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            app:civ_border_color="@color/colorPrimaryDark"
+            app:civ_border_width="2dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="160dp"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/punesmartcity" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <TextView
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="32dp"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:text="Pune Smart City App"
+        android:layout_height="wrap_content" />
 
     <com.google.android.gms.common.SignInButton
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="64dp"
         android:layout_gravity="center_horizontal"
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/login_google_sign_in"/>
 
