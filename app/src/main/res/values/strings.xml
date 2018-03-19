@@ -17,4 +17,11 @@
     <string name="login_foreign">Foreign Organisation</string>
 
     <string name="action_signout">Sign Out</string>
+    <string name="reporting">Reporting</string>
+    <string name="polls_surveys">Polls/Surveys</string>
+    <string name="news">News</string>
+    <string name="events">Events</string>
+    <string name="alerts">Alerts</string>
+    <string name="projects">Projects</string>
+    <string name="home">Home</string>
 </resources>

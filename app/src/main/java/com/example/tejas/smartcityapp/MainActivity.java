@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private FirebaseAuth firebaseAuth;
+    private DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -113,6 +114,10 @@ public class MainActivity extends AppCompatActivity
             finish();
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
+        if (id == android.R.id.home) {
+            drawer.openDrawer(GravityCompat.START);
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -121,23 +126,37 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        int itemId = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (itemId == R.id.nav_home){
 
-        } else if (id == R.id.nav_slideshow) {
+        }
+        else if (itemId == R.id.nav_projects){
 
-        } else if (id == R.id.nav_manage) {
+        }
+        else if (itemId == R.id.nav_alerts){
 
-        } else if (id == R.id.nav_share) {
+        }
+        else if (itemId == R.id.nav_events){
 
-        } else if (id == R.id.nav_send) {
+        }
+        else if (itemId == R.id.nav_reporting){
+
+        }
+        else if (itemId == R.id.nav_surveys){
+
+        }
+        else if (itemId == R.id.nav_news){
+
+        }
+        else if (itemId == R.id.nav_chat){
+
+        }
+        else if (itemId == R.id.nav_myprofile){
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
