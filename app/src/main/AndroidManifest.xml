@@ -20,7 +20,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".UserDetailsActivity"></activity>
+        <activity android:name=".UserDetailsActivity" />
+        <activity
+            android:name=".ProjectType1DetailsActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/title_activity_project_type1_details"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
