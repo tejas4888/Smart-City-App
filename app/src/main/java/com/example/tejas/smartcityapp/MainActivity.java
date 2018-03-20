@@ -1,10 +1,13 @@
 package com.example.tejas.smartcityapp;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,13 +19,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.tejas.smartcityapp.Fragments.MainFragment;
+import com.example.tejas.smartcityapp.Fragments.ProjectTabsFragment;
 import com.example.tejas.smartcityapp.HelperClasses.AppConstants;
 import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
+import java.util.Stack;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    FragmentManager fm;
+    String backStageName;
 
     private FirebaseAuth firebaseAuth;
     private DrawerLayout drawer;
@@ -76,12 +87,21 @@ public class MainActivity extends AppCompatActivity
         TextView navEmail = (TextView) headerView.findViewById(R.id.nav_header_email);
         ImageView navImage = (ImageView) headerView.findViewById(R.id.nav_header_image);
 
+        if (savedInstanceState==null)
+        {
+            Toast.makeText(this,"Hello",Toast.LENGTH_SHORT).show();
+            fm = getSupportFragmentManager();
+            FragmentTransaction transaction = fm.beginTransaction();
+            MainFragment mainFragment = MainFragment.newInstance();
+            transaction.replace(R.id.main_fragment_container, mainFragment).commit();
+        }
+
         try{
             navUsername.setText(firebaseAuth.getCurrentUser().getDisplayName());
             navEmail.setText(firebaseAuth.getCurrentUser().getEmail());
             Picasso.get().load(firebaseAuth.getCurrentUser().getPhotoUrl()).into(navImage);
         }catch (Exception e) {        }
-
+        navigationView.getMenu().getItem(0).setChecked(true);
     }
 
     @Override
@@ -127,12 +147,21 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int itemId = item.getItemId();
+        final FragmentTransaction fragmentTransaction = fm.beginTransaction();
 
         if (itemId == R.id.nav_home){
-
+            boolean isFragmentInStack = fm.popBackStackImmediate(backStageName, 0);
+            if (!isFragmentInStack) {
+                MainFragment fragment = MainFragment.newInstance();
+                fragmentTransaction.replace(R.id.main_fragment_container, fragment);
+                backStageName = fragment.getClass().getName();
+                fragmentTransaction.addToBackStack(backStageName).commit();
+            }
         }
         else if (itemId == R.id.nav_projects){
-
+            getSupportFragmentManager().popBackStackImmediate();
+            fragmentTransaction.replace(R.id.main_fragment_container, new ProjectTabsFragment());
+            fragmentTransaction.addToBackStack(null).commit();
         }
         else if (itemId == R.id.nav_alerts){
 
