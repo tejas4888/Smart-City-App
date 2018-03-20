@@ -35,9 +35,9 @@ public class ProjectCategoryAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
-            return "About Us";
+            return "Type 1";
         }  else {
-            return "Contact Us";
+            return "Type 2";
         }
     }
 
