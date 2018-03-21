@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity
 
         if (savedInstanceState==null)
         {
-            Toast.makeText(this,"Hello",Toast.LENGTH_SHORT).show();
             fm = getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
             MainFragment mainFragment = MainFragment.newInstance();

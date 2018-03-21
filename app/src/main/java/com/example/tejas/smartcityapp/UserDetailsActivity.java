@@ -149,6 +149,20 @@ public class UserDetailsActivity extends AppCompatActivity {
                 editor.putString(email,"1");
                 editor.commit();
 
+                prefs = getSharedPreferences(AppConstants.CURRENT_USER, MODE_PRIVATE);
+                editor=prefs.edit();
+                editor.putString("user_id",s);
+                editor.putString("name",name);
+                editor.putString("email",email);
+                editor.putString("contact",contact);
+                editor.putString("type",String.valueOf(type));
+                editor.putString("type1",String.valueOf(types[0]));
+                editor.putString("type2",String.valueOf(types[1]));
+                editor.putString("type3",String.valueOf(types[2]));
+                editor.putString("type4",String.valueOf(types[3]));
+                editor.putString("type5",String.valueOf(types[4]));
+                editor.commit();
+
                 Intent intent = new Intent(UserDetailsActivity.this,MainActivity.class);
                 startActivity(intent);
             }
@@ -176,8 +190,10 @@ public class UserDetailsActivity extends AppCompatActivity {
                 }
 
                 RequestHandler rh = new RequestHandler();
-                String res = rh.sendPostRequest(AppConstants.add_user, params);
-                return res;
+                String user_id = rh.sendPostRequest(AppConstants.add_user, params);
+
+                Log.v("USER ADD",user_id);
+                return user_id;
             }
         }
 

@@ -1,6 +1,7 @@
 package com.example.tejas.smartcityapp.RecyclerAdapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tejas.smartcityapp.Items.ProjectType1Item;
+import com.example.tejas.smartcityapp.ProjectType1DetailsActivity;
 import com.example.tejas.smartcityapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -37,19 +39,26 @@ public class ProjectType1RecyclerAdapter extends RecyclerView.Adapter<ProjectTyp
     }
 
     @Override
-    public void onBindViewHolder(ProjectType1RecyclerAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(ProjectType1RecyclerAdapter.ViewHolder holder, final int position) {
 
         holder.department_textview.setText(arrayList.get(position).department);
         holder.title_textview.setText(arrayList.get(position).title);
         Picasso.get().load(arrayList.get(position).img_url).into(holder.project_imageview);
 
-        /*
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //do intents etc.
+
+                Intent intent=new Intent(context, ProjectType1DetailsActivity.class);
+                intent.putExtra("Project_id",arrayList.get(position).id);
+                intent.putExtra("Title",arrayList.get(position).title);
+                intent.putExtra("Description",arrayList.get(position).description);
+                intent.putExtra("Department",arrayList.get(position).department);
+                intent.putExtra("City",arrayList.get(position).city);
+                intent.putExtra("Image_url",arrayList.get(position).img_url);
+                context.startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override
