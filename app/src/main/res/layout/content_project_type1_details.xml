@@ -164,7 +164,7 @@
         <Button
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-
+            android:id="@+id/details_project_type1_interested_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Interested"/>
@@ -172,7 +172,7 @@
         <Button
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-
+            android:id="@+id/details_project_type1_submit_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Submit"/>

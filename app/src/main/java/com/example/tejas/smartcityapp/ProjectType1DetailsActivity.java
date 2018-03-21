@@ -2,6 +2,7 @@ package com.example.tejas.smartcityapp;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -66,6 +67,9 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
         department=(TextView)findViewById(R.id.details_project_type1_department);
         city=(TextView)findViewById(R.id.details_project_type1_city);
 
+        interested_btn=(Button)findViewById(R.id.details_project_type1_interested_btn);
+        submit_btn=(Button)findViewById(R.id.details_project_type1_submit_btn);
+
         getProjectNews(getIntent().getStringExtra("Project_id"));
 
         newCard = (CardView)findViewById(R.id.details_project_type1_newscard);
@@ -83,6 +87,75 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
         {
 
         }
+
+        interested_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insertSubmission_Interested(getIntent().getStringExtra("Project_id"),0);
+            }
+        });
+
+        submit_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insertSubmission_Interested(getIntent().getStringExtra("Project_id"),1);
+            }
+        });
+    }
+
+    private void insertSubmission_Interested(final String project_id,final int from)
+    {
+        class GetJSON2 extends AsyncTask<Void, Void, String> {
+
+            ProgressDialog progressDialog;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                progressDialog = ProgressDialog.show(ProjectType1DetailsActivity.this,"Checking Submission","Please Wait...",false,
+                        false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                progressDialog.dismiss();
+                if (s.equals("0"))
+                {
+                    Toast.makeText(ProjectType1DetailsActivity.this, "Already Submitted!", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(ProjectType1DetailsActivity.this, "Submission Successful!", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+                HashMap<String,String> args = new HashMap<>();
+                SharedPreferences prefs = getSharedPreferences(AppConstants.CURRENT_USER, MODE_PRIVATE);
+                String user_id = prefs.getString("user_id", "0");
+
+                args.put("project_id",project_id);
+                args.put("user_id",user_id);
+
+                Log.v("BEFORE RESULT",project_id+" "+user_id);
+
+                RequestHandler rh = new RequestHandler();
+
+                String s="";
+                if (from==0)
+                {
+                    s = rh.sendPostRequest(AppConstants.insert_type1_project_intersted,args);
+                }else
+                {
+                    s = rh.sendPostRequest(AppConstants.insert_type1_project_submit,args);
+                }
+                Log.v("RESULT",s);
+
+                return s;
+            }
+        }
+        GetJSON2 gj = new GetJSON2();
+        gj.execute();
     }
 
     private void getProjectNews(final String project_id) {
