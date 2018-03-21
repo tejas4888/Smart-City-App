@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:layout_margin="8dp"
+    android:id="@+id/polls_format_cardview"
+    app:cardCornerRadius="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/polls_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="18dp"
+            android:text="Question"
+            />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/polls_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/polls_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/polls_cantsay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/can_t_say"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/polls_submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="submit"
+            android:onClick="onSubmitButtonClicked"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
