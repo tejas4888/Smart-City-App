@@ -1,6 +1,8 @@
 package com.example.tejas.smartcityapp.Fragments;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.tejas.smartcityapp.HelperClasses.AppConstants;
-import com.example.tejas.smartcityapp.HelperClasses.HttpHandler;
+import com.example.tejas.smartcityapp.HelperClasses.RequestHandler;
 import com.example.tejas.smartcityapp.Items.PollsItem;
 import com.example.tejas.smartcityapp.R;
 import com.example.tejas.smartcityapp.RecyclerAdapter.PollsRecyclerAdapter;
@@ -22,6 +24,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by dani on 20/03/2018.
@@ -59,7 +64,7 @@ public class PollsFragment extends Fragment {
     }
 
 
-    private class GetProjectList extends AsyncTask<Void,Void,Void>
+    private class GetProjectList extends AsyncTask<Void, Void, Void>
     {
 
         @Override
@@ -75,11 +80,15 @@ public class PollsFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... params) {
 
-            HttpHandler sh = new HttpHandler();
+            SharedPreferences prefs = getActivity().getSharedPreferences(AppConstants.CURRENT_USER, MODE_PRIVATE);
+            String user_id = prefs.getString("user_id", "0");
 
-            String jsonStr = sh.makeServiceCall(AppConstants.get_poll_questions);
+            HashMap<String,String> args = new HashMap<>();
 
-            /* Need to edit following code*/
+            args.put("user_id",user_id);
+            RequestHandler rh = new RequestHandler();
+
+            final String jsonStr = rh.sendPostRequest(AppConstants.get_poll_questions,args);
 
             if (jsonStr != null) {
                 try {
@@ -92,8 +101,9 @@ public class PollsFragment extends Fragment {
 
                         String poll_id =c.getString("poll_id");
                         String question = c.getString("question");
+                        String poll_ans = c.getString("poll_ans");
 
-                        PollsItem object = new PollsItem(poll_id,question);
+                        PollsItem object = new PollsItem(poll_id,question,poll_ans);
 
                         items.add(object);
                     }
@@ -102,7 +112,7 @@ public class PollsFragment extends Fragment {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(getActivity(),"Couldn't get data from Server. Please try again later", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(),"Couldn't get data from Server. Please try again later", Toast.LENGTH_LONG).show();
                         }
                     });
 
