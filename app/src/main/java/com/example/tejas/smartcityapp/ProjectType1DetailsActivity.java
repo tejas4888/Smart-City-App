@@ -33,10 +33,13 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class ProjectType1DetailsActivity extends AppCompatActivity {
 
     TextView title,description,department,city;
+    TextView viewed_num,interested_num,submit_num;
     ImageView imageView;
     Button interested_btn,submit_btn;
     ListView news_listView;
@@ -51,6 +54,13 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        viewed_num = (TextView)findViewById(R.id.details_project_type1_num_viewed);
+        interested_num = (TextView)findViewById(R.id.details_project_type1_num_interested);
+        submit_num = (TextView) findViewById(R.id.details_project_type1_num_submitted);
+
+        getStatistics(getIntent().getStringExtra("Project_id"));
+        insertViewed(getIntent().getStringExtra("Project_id"));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +113,77 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
         });
     }
 
+    private void getStatistics(final String project_id)
+    {
+        class GetJSON2 extends AsyncTask<Void,Void,String>
+        {
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                Scanner sc=new Scanner(s);
+
+                ArrayList<String> nums=new ArrayList<>();
+                while (sc.hasNext())
+                {
+                    nums.add(sc.next());
+                }
+                viewed_num.setText(nums.get(0));
+                interested_num.setText(nums.get(1));
+                submit_num.setText(nums.get(2));
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+                HashMap<String,String> args = new HashMap<>();
+                args.put("project_id",project_id);
+                RequestHandler rh = new RequestHandler();
+
+                String s = rh.sendPostRequest(AppConstants.get_type1_project_statistics,args);
+                Log.v("RESULT",s);
+                return s;
+            }
+        }
+        GetJSON2 gj = new GetJSON2();
+        gj.execute();
+    }
+
+    private void insertViewed(final String project_id)
+    {
+        class GetJSON2 extends AsyncTask<Void,Void,String>
+        {
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+                HashMap<String,String> args = new HashMap<>();
+                SharedPreferences prefs = getSharedPreferences(AppConstants.CURRENT_USER, MODE_PRIVATE);
+                String user_id = prefs.getString("user_id", "0");
+
+                args.put("user_id",user_id);
+                args.put("project_id",project_id);
+                RequestHandler rh = new RequestHandler();
+
+                String s = rh.sendPostRequest(AppConstants.insert_type1_project_viewed,args);
+                return s;
+            }
+        }
+        GetJSON2 gj = new GetJSON2();
+        gj.execute();
+    }
+
     private void insertSubmission_Interested(final String project_id,final int from)
     {
         class GetJSON2 extends AsyncTask<Void, Void, String> {
@@ -137,8 +218,6 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
                 args.put("project_id",project_id);
                 args.put("user_id",user_id);
 
-                Log.v("BEFORE RESULT",project_id+" "+user_id);
-
                 RequestHandler rh = new RequestHandler();
 
                 String s="";
@@ -149,8 +228,6 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
                 {
                     s = rh.sendPostRequest(AppConstants.insert_type1_project_submit,args);
                 }
-                Log.v("RESULT",s);
-
                 return s;
             }
         }
@@ -170,7 +247,6 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 JSON_NEWS_STRING = s;
-                Log.v("NEWS",JSON_NEWS_STRING);
                 readNews(JSON_NEWS_STRING);
             }
 

@@ -10,7 +10,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="264dp"
+        android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -25,7 +25,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="264dp"
+                android:layout_height="320dp"
                 android:id="@+id/details_project_type1_image"
                 android:scaleType="fitXY"/>
 
