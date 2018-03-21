@@ -3,6 +3,8 @@ package com.example.tejas.smartcityapp.Fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.BottomSheetDialog;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -17,6 +19,7 @@ public class ProjectTabsFragment extends Fragment {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private FloatingActionButton floatingActionButton;
 
     public ProjectTabsFragment() {
         // Required empty public constructor
@@ -31,13 +34,21 @@ public class ProjectTabsFragment extends Fragment {
 
         tabLayout = (TabLayout)view.findViewById(R.id.project_tabs_fragment_tablayout);
         viewPager = (ViewPager)view.findViewById(R.id.project_tabs_fragment_viewpager);
+        floatingActionButton = (FloatingActionButton)view.findViewById(R.id.project_tabs_fragment_fab);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FilterBottomSheetFragment fragment=new FilterBottomSheetFragment();
+                fragment.show(getActivity().getSupportFragmentManager(),fragment.getTag());
+            }
+        });
 
         ProjectCategoryAdapter adapter=new ProjectCategoryAdapter(getChildFragmentManager());
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-
-
+        
         return view;
     }
 }
