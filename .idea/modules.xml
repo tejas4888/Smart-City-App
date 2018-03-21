@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SmartCityApp.iml" filepath="$PROJECT_DIR$/.idea/SmartCityApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartCityApp.iml" filepath="$PROJECT_DIR$/SmartCityApp.iml" />
       <module fileurl="file://C:\Users\dani\AndroidStudioProjects\SmartCityApp\SmartCityApp.iml" filepath="C:\Users\dani\AndroidStudioProjects\SmartCityApp\SmartCityApp.iml" />
+      <module fileurl="file://F:\Spit\SmartIndiaHackathon18\App\SmartIndia\SmartCityApp\.idea\SmartCityApp.iml" filepath="F:\Spit\SmartIndiaHackathon18\App\SmartIndia\SmartCityApp\.idea\SmartCityApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
