@@ -48,7 +48,7 @@ public class ProjectTabsFragment extends Fragment {
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-        
+
         return view;
     }
 }
