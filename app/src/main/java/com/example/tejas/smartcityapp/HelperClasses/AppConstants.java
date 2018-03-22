@@ -8,6 +8,8 @@ public class AppConstants {
 
     public static final String LOGIN_PREFS="LOGIN_PREFS";
     public static final String CURRENT_USER="CURRENT_USER";
+    public static final String FAVOURITES_PROJECT_TYPE1="FAVOURITES_PROJECT_TYPE1";
+
 
     public static final String add_user="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Login/add_user.php";
 
