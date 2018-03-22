@@ -41,7 +41,7 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
     TextView title,description,department,city;
     TextView viewed_num,interested_num,submit_num;
     ImageView imageView;
-    Button interested_btn,submit_btn;
+    Button submit_btn;
     ListView news_listView;
     CardView newCard;
     ArrayList<ProjectType1NewsItem> newsItemArrayList;
@@ -66,8 +66,7 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                insertSubmission_Interested(getIntent().getStringExtra("Project_id"),0);
             }
         });
 
@@ -77,7 +76,6 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
         department=(TextView)findViewById(R.id.details_project_type1_department);
         city=(TextView)findViewById(R.id.details_project_type1_city);
 
-        interested_btn=(Button)findViewById(R.id.details_project_type1_interested_btn);
         submit_btn=(Button)findViewById(R.id.details_project_type1_submit_btn);
 
         getProjectNews(getIntent().getStringExtra("Project_id"));
@@ -97,13 +95,6 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
         {
 
         }
-
-        interested_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                insertSubmission_Interested(getIntent().getStringExtra("Project_id"),0);
-            }
-        });
 
         submit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -205,6 +196,14 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
                     Toast.makeText(ProjectType1DetailsActivity.this, "Already Submitted!", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(ProjectType1DetailsActivity.this, "Submission Successful!", Toast.LENGTH_SHORT).show();
+                }
+
+                if (from==0)
+                {
+                    SharedPreferences prefs = getSharedPreferences(AppConstants.FAVOURITES_PROJECT_TYPE1, MODE_PRIVATE);
+                    SharedPreferences.Editor editor=prefs.edit();
+                    editor.putString(project_id,"1");
+                    editor.commit();
                 }
 
             }
