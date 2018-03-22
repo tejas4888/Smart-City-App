@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "839816078063-ge6bu14il6b1q7oukl5f0lf36nu5i0nu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tejas.smartcityapp",
+            "certificate_hash": "fcc17f080249b8839a0af010bb2453b2aeb3081f"
+          }
+        },
+        {
+          "client_id": "839816078063-c2vrg65gmupo2l04sfj41qiec814n0kh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tejas.smartcityapp",
+            "certificate_hash": "44d967e6bcc440455802eb983323b09448456c43"
+          }
+        },
+        {
           "client_id": "839816078063-ct50eca9fdvi0eniv2njlutqf1ipgp4h.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

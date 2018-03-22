@@ -3,6 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
+    <color name="active_indicator">@android:color/white</color>
+    <color name="inactive_indicator">#4D000000</color>
     <color name="silver">#C0C0C0</color>
+    <color name="white">@android:color/white</color>
+    <color name="black_transparent">#14000000</color>
+    <color name="onboarder_bg_1">#455A64</color>
+    <color name="onboarder_bg_2">#37474F</color>
+    <color name="onboarder_bg_3">#263238</color>
+
+    <color name="primary_text">#FAFAFA</color>
+    <color name="secondary_text">#E0E0E0</color>
 </resources>
