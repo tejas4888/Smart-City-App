@@ -120,4 +120,7 @@
     <string name="no">No</string>
     <string name="yes">Yes</string>
     <string name="can_t_say">Can\'t say</string>
+    <string name="button.finish">Finish</string>
+    <string name="button.next">Next</string>
+    <string name="button.skip">Skip</string>
 </resources>
