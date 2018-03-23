@@ -4,6 +4,7 @@ package com.example.tejas.smartcityapp.Fragments;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -37,7 +38,7 @@ public class ProjectType1Fragment extends Fragment {
     RecyclerView recyclerView;
     ArrayList<ProjectType1Item> items;
     ProgressDialog progressDialog;
-
+    FloatingActionButton filter_fab;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,6 +49,16 @@ public class ProjectType1Fragment extends Fragment {
         recyclerView=(RecyclerView)view.findViewById(R.id.fragment_project_type1_recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        filter_fab=(FloatingActionButton)view.findViewById(R.id.fragment_project_type1_filter_fab);
+
+        filter_fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FilterBottomSheetFragment fragment=new FilterBottomSheetFragment();
+                fragment.show(getActivity().getSupportFragmentManager(),fragment.getTag());
+            }
+        });
 
         items=new ArrayList<ProjectType1Item>();
         new GetProjectList().execute();

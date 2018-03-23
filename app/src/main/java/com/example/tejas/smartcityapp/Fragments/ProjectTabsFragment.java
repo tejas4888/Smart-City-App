@@ -19,12 +19,10 @@ public class ProjectTabsFragment extends Fragment {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private FloatingActionButton floatingActionButton;
 
     public ProjectTabsFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,15 +32,6 @@ public class ProjectTabsFragment extends Fragment {
 
         tabLayout = (TabLayout)view.findViewById(R.id.project_tabs_fragment_tablayout);
         viewPager = (ViewPager)view.findViewById(R.id.project_tabs_fragment_viewpager);
-        floatingActionButton = (FloatingActionButton)view.findViewById(R.id.project_tabs_fragment_fab);
-
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FilterBottomSheetFragment fragment=new FilterBottomSheetFragment();
-                fragment.show(getActivity().getSupportFragmentManager(),fragment.getTag());
-            }
-        });
 
         ProjectCategoryAdapter adapter=new ProjectCategoryAdapter(getChildFragmentManager());
 
