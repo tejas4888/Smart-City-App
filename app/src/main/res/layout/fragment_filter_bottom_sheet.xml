@@ -15,29 +15,41 @@
 
     <CheckBox
         android:textSize="18dp"
+        android:id="@+id/bottom_sheet_filter_check1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Technical"/>
 
     <CheckBox
         android:textSize="18dp"
+        android:id="@+id/bottom_sheet_filter_check2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Finance"/>
 
     <CheckBox
         android:textSize="18dp"
+        android:id="@+id/bottom_sheet_filter_check3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Infrastructure"/>
 
     <CheckBox
         android:textSize="18dp"
+        android:id="@+id/bottom_sheet_filter_check4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Research"/>
 
+    <CheckBox
+        android:textSize="18dp"
+        android:id="@+id/bottom_sheet_filter_check5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Foreign"/>
+
     <Button
+        android:id="@+id/bottom_sheet_filter_apply_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="APPLY"/>
