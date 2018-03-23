@@ -29,18 +29,15 @@
             <RadioButton android:id="@+id/polls_yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/yes"
-                android:onClick="onRadioButtonClicked"/>
+                android:text="@string/yes" />
             <RadioButton android:id="@+id/polls_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/no"
-                android:onClick="onRadioButtonClicked"/>
+                android:text="@string/no" />
             <RadioButton android:id="@+id/polls_cantsay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/can_t_say"
-                android:onClick="onRadioButtonClicked"/>
+                android:text="@string/can_t_say" />
         </RadioGroup>
 
         <Button
@@ -48,8 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="submit"
-            android:onClick="onSubmitButtonClicked"/>
+            android:text="submit"/>
 
     </LinearLayout>
 

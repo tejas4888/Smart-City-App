@@ -7,19 +7,19 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/home" />
         <item
             android:id="@+id/nav_projects"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_description_black_24dp"
             android:title="@string/projects" />
         <item
             android:id="@+id/nav_alerts"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_warning_black_24dp"
             android:title="@string/alerts" />
         <item
             android:id="@+id/nav_events"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_event_black_24dp"
             android:title="@string/events" />
     </group>
 
@@ -27,15 +27,15 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_news"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/ic_router_black_24dp"
             android:title="@string/news" />
         <item
             android:id="@+id/nav_surveys"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/ic_thumbs_up_down_black_24dp"
             android:title="@string/polls_surveys" />
         <item
             android:id="@+id/nav_reporting"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_remove_red_eye_black_24dp"
             android:title="@string/reporting" />
     </group>
 
@@ -43,12 +43,12 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_myprofile"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/ic_person_black_24dp"
             android:title="My Profile" />
         <item
             android:id="@+id/nav_chat"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Chat" />
+            android:icon="@drawable/ic_chat_black_24dp"
+            android:title="Contact Us" />
     </group>
 
 </menu>
