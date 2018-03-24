@@ -29,6 +29,7 @@ import com.example.tejas.smartcityapp.Fragments.NewsFragment;
 import com.example.tejas.smartcityapp.Fragments.PollsFragment;
 import com.example.tejas.smartcityapp.Fragments.PollsSurveyTabsFragment;
 import com.example.tejas.smartcityapp.Fragments.ProjectTabsFragment;
+import com.example.tejas.smartcityapp.Fragments.ReportListFragment;
 import com.example.tejas.smartcityapp.HelperClasses.AppConstants;
 import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
@@ -168,7 +169,8 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (itemId == R.id.nav_reporting){
-
+            Intent intent=new Intent(MainActivity.this,ReportFillActivity.class);
+            startActivity(intent);
         }
         else if (itemId == R.id.nav_surveys){
             getSupportFragmentManager().popBackStackImmediate();

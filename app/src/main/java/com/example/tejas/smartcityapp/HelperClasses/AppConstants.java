@@ -30,9 +30,11 @@ public class AppConstants {
     //Alerts
     public static final String get_alerts_list="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/getAlertsList.php";
 
+    //Reporting
+    public static final String upload_report="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Reporting/AppUploadedImage/upload.php";
+
     //News
     public static final String get_news="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/News/news.php";
-
 
     //Polls, Surveys Queries
     public static final String get_poll_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getPollQuestions.php";
