@@ -27,4 +27,7 @@ public class AppConstants {
     //Polls, Surveys Queries
     public static final String get_poll_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getPollQuestions.php";
     public static final String save_poll_answers="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/savePollResult.php";
+    public static final String get_survey_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getSurveyQuestions.php";
+    public static final String save_survey_answers="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/saveSurveyAnswers.php";
+
 }

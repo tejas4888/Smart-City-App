@@ -137,7 +137,7 @@ public class PollsRecyclerAdapter extends RecyclerView.Adapter<PollsRecyclerAdap
             super(itemView);
 
             question_textview=itemView.findViewById(R.id.polls_question);
-            cardView=itemView.findViewById(R.id.polls_item_cardview);
+            cardView=itemView.findViewById(R.id.polls_format_cardview);
             radioButtonYes = itemView.findViewById(R.id.polls_yes);
             radioButtonNo = itemView.findViewById(R.id.polls_no);
             radioButtonCantsay = itemView.findViewById(R.id.polls_cantsay);

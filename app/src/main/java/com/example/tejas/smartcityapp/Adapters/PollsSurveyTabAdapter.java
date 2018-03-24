@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.tejas.smartcityapp.Fragments.PollsFragment;
+import com.example.tejas.smartcityapp.Fragments.SurveyFragment;
 
 /**
  * Created by dani on 20/03/2018.
@@ -21,8 +22,8 @@ public class PollsSurveyTabAdapter extends FragmentPagerAdapter {
         if (position == 0) {
             return new PollsFragment();
         }  else {
-            return new PollsFragment();
-            //return new SurveyFragment();
+            //return new PollsFragment();
+            return new SurveyFragment();
         }
     }
 
