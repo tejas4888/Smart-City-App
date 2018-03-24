@@ -27,8 +27,6 @@ public class FilterBottomSheetFragment extends BottomSheetDialogFragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_filter_bottom_sheet, container, false);
 
-
-
         return view;
     }
 
