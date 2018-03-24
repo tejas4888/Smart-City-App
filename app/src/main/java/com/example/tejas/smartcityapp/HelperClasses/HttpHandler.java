@@ -33,8 +33,14 @@ public class HttpHandler {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             // read the response
-            InputStream in = new BufferedInputStream(conn.getInputStream());
+            Log.e("Title", "********** Makeservicecall() :   "+conn==null?"Yes":"No");
+
+
+            InputStream input = conn.getInputStream();
+            BufferedInputStream in = new BufferedInputStream(input);
+            Log.e("Title", in+"Intermediate");
             response = convertStreamToString(in);
+            Log.e("Title", "******response string: "+response);
         } catch (MalformedURLException e) {
             Log.e(TAG, "MalformedURLException: " + e.getMessage());
         } catch (ProtocolException e) {
