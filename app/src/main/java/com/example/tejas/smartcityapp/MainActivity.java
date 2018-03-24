@@ -8,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.tejas.smartcityapp.Adapters.PollsSurveyTabAdapter;
 import com.example.tejas.smartcityapp.Fragments.MainFragment;
+import com.example.tejas.smartcityapp.Fragments.NewsFragment;
 import com.example.tejas.smartcityapp.Fragments.PollsFragment;
 import com.example.tejas.smartcityapp.Fragments.PollsSurveyTabsFragment;
 import com.example.tejas.smartcityapp.Fragments.ProjectTabsFragment;
@@ -171,7 +173,9 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.addToBackStack(null).commit();
         }
         else if (itemId == R.id.nav_news){
-
+            getSupportFragmentManager().popBackStackImmediate();
+            fragmentTransaction.replace(R.id.main_fragment_container, new NewsFragment());
+            fragmentTransaction.addToBackStack(null).commit();
         }
         else if (itemId == R.id.nav_chat){
 
