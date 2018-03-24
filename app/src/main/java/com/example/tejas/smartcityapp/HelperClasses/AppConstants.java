@@ -27,10 +27,16 @@ public class AppConstants {
     public static final String get_type1_project_statistics="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Projects/getViewInterestsMatches.php";
 
 
+    //Alerts
+    public static final String get_alerts_list="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/getAlertsList.php";
+
+
+
     //Polls, Surveys Queries
     public static final String get_poll_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getPollQuestions.php";
     public static final String save_poll_answers="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/savePollResult.php";
 
 
+    //News
     public static final String get_news="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/News/news.php";
 }

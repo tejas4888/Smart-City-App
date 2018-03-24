@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tejas.smartcityapp.Adapters.PollsSurveyTabAdapter;
+import com.example.tejas.smartcityapp.Fragments.AlertsFragment;
 import com.example.tejas.smartcityapp.Fragments.MainFragment;
 import com.example.tejas.smartcityapp.Fragments.NewsFragment;
 import com.example.tejas.smartcityapp.Fragments.PollsFragment;
@@ -159,7 +160,9 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.addToBackStack(null).commit();
         }
         else if (itemId == R.id.nav_alerts){
-
+            getSupportFragmentManager().popBackStackImmediate();
+            fragmentTransaction.replace(R.id.main_fragment_container,new AlertsFragment());
+            fragmentTransaction.addToBackStack(null).commit();
         }
         else if (itemId == R.id.nav_events){
 
