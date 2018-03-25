@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -183,7 +184,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (itemId == R.id.nav_reporting) {
             Intent intent = new Intent(MainActivity.this, ReportFillActivity.class);
-            startActivity(intent);
+            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this).toBundle());
         }
         else if (itemId == R.id.nav_myprojects){
             getSupportFragmentManager().popBackStackImmediate();
