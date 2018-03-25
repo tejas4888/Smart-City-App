@@ -167,23 +167,45 @@ public class MainActivity extends AppCompatActivity
         else if (itemId == R.id.nav_events){
 
         }
-        else if (itemId == R.id.nav_reporting){
+        else if (itemId == R.id.nav_innovation){
 
-        }
-        else if (itemId == R.id.nav_surveys){
-            getSupportFragmentManager().popBackStackImmediate();
-            fragmentTransaction.replace(R.id.main_fragment_container, new PollsSurveyTabsFragment());
-            fragmentTransaction.addToBackStack(null).commit();
         }
         else if (itemId == R.id.nav_news){
             getSupportFragmentManager().popBackStackImmediate();
             fragmentTransaction.replace(R.id.main_fragment_container, new NewsFragment());
             fragmentTransaction.addToBackStack(null).commit();
         }
-        else if (itemId == R.id.nav_chat){
+        else if (itemId == R.id.nav_surveys){
+            getSupportFragmentManager().popBackStackImmediate();
+            fragmentTransaction.replace(R.id.main_fragment_container, new PollsSurveyTabsFragment());
+            fragmentTransaction.addToBackStack(null).commit();
+        }
+        else if (itemId == R.id.nav_reporting){
 
         }
-        else if (itemId == R.id.nav_myprofile){
+        else if (itemId == R.id.nav_myprojects){
+            getSupportFragmentManager().popBackStackImmediate();
+            fragmentTransaction.replace(R.id.main_fragment_container, new ProjectTabsFragment());
+            fragmentTransaction.addToBackStack(null).commit();
+        }
+        else if (itemId == R.id.nav_myreports){
+            /*getSupportFragmentManager().popBackStackImmediate();
+            fragmentTransaction.replace(R.id.main_fragment_container, new ProjectTabsFragment());
+            fragmentTransaction.addToBackStack(null).commit();
+            */
+        }
+        else if (itemId == R.id.nav_watchlist){
+            getSupportFragmentManager().popBackStackImmediate();
+            fragmentTransaction.replace(R.id.main_fragment_container, new ProjectTabsFragment());
+            fragmentTransaction.addToBackStack(null).commit();
+        }
+        else if (itemId == R.id.nav_updateprofile){
+            /*getSupportFragmentManager().popBackStackImmediate();
+            fragmentTransaction.replace(R.id.main_fragment_container, new ProjectTabsFragment());
+            fragmentTransaction.addToBackStack(null).commit();
+            */
+        }
+        else if (itemId == R.id.nav_contactus){
 
         }
 
