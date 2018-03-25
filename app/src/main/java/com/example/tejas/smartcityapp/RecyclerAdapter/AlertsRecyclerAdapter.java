@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.tejas.smartcityapp.AlertDetailsActivity;
 import com.example.tejas.smartcityapp.Items.AlertItem;
 import com.example.tejas.smartcityapp.R;
 
@@ -37,7 +38,7 @@ public class AlertsRecyclerAdapter extends RecyclerView.Adapter<AlertsRecyclerAd
     }
 
     @Override
-    public void onBindViewHolder(AlertsRecyclerAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(AlertsRecyclerAdapter.ViewHolder holder,final int position) {
         holder.date.setText(arrayList.get(position).date);
         holder.time.setText(arrayList.get(position).time);
         holder.title.setText(arrayList.get(position).title);
@@ -52,11 +53,11 @@ public class AlertsRecyclerAdapter extends RecyclerView.Adapter<AlertsRecyclerAd
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*
-                    Intent intent=new Intent(context,);
+
+                    Intent intent=new Intent(context, AlertDetailsActivity.class);
                     intent.putExtra("alert_id",arrayList.get(position).alert_id);
                     context.startActivity(intent);
-                */
+
             }
         });
 
