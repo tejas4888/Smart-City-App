@@ -30,6 +30,10 @@ public class UserDetailsActivity extends AppCompatActivity {
     LinearLayout checkLayout;
     Button btnSubmit;
     private FirebaseAuth firebaseAuth;
+
+    EditText editText_address;
+    CheckBox checkBox_email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +53,9 @@ public class UserDetailsActivity extends AppCompatActivity {
         btnSubmit=(Button)findViewById(R.id.userdetails_btnSubmit);
 
         editText_contact=(EditText)findViewById(R.id.userdetails_editText_Contact);
+
+        editText_address=(EditText)findViewById(R.id.userdetails_address_edittext);
+        checkBox_email=(CheckBox)findViewById(R.id.userdetails_mail_checkbox);
 
         radioButton2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,12 +128,32 @@ public class UserDetailsActivity extends AppCompatActivity {
                         return;
                     }
                 }
-                addUser(firebaseAuth.getCurrentUser().getDisplayName(),firebaseAuth.getCurrentUser().getEmail(),contact,type,types);
+
+                String address_text="";
+                String email_notification="";
+
+                if (editText_address.getText().toString().length()==0)
+                {
+                    return;
+                }else{
+                    address_text=editText_address.getText().toString();
+                }
+
+                if (checkBox_email.isChecked())
+                {
+                    email_notification="1";
+                }else
+                {
+                    email_notification="0";
+                }
+                addUser(firebaseAuth.getCurrentUser().getDisplayName(),firebaseAuth.getCurrentUser().getEmail(),contact,type,types,
+                        address_text,email_notification);
             }
         });
     }
 
-    private void addUser(final String name, final String email, final String contact, final int type, final int types[])
+    private void addUser(final String name, final String email, final String contact, final int type, final int types[],
+                         final String address, final String email_notfication)
     {
         class AddUser extends AsyncTask<Void,Void,String>
         {
@@ -155,6 +182,7 @@ public class UserDetailsActivity extends AppCompatActivity {
                 editor.putString("name",name);
                 editor.putString("email",email);
                 editor.putString("contact",contact);
+                editor.putString("address",address);
                 editor.putString("type",String.valueOf(type));
                 editor.putString("type1",String.valueOf(types[0]));
                 editor.putString("type2",String.valueOf(types[1]));
@@ -174,6 +202,8 @@ public class UserDetailsActivity extends AppCompatActivity {
                 params.put("email",email);
                 params.put("contact",contact);
                 params.put("type",String.valueOf(type));
+                params.put("address",String.valueOf(address));
+                params.put("email_notification",String.valueOf(email_notfication));
 
                 for (int i=0;i<5;i++)
                 {

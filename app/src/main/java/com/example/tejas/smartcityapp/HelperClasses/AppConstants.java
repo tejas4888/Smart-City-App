@@ -12,6 +12,7 @@ public class AppConstants {
 
 
     public static final String add_user="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Login/add_user.php";
+    public static final String get_user="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Login/get_user.php";
 
     //Project Queries
     public static final String get_type1_projects="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Projects/getProjectList.php";
@@ -29,17 +30,20 @@ public class AppConstants {
 
     //Alerts
     public static final String get_alerts_list="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/getAlertsList.php";
+    public static final String get_alerts_details="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/alerts_details.php";
+    public static final String get_alerts_contacts="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/alerts_contacts.php";
 
-    //Reporting
-    public static final String upload_report="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Reporting/AppUploadedImage/upload.php";
-
-    //News
-    public static final String get_news="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/News/news.php";
 
     //Polls, Surveys Queries
     public static final String get_poll_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getPollQuestions.php";
     public static final String save_poll_answers="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/savePollResult.php";
-    public static final String get_survey_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getSurveyQuestions.php";
-    public static final String save_survey_answers="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/saveSurveyAnswers.php";
+    public static  final String get_survey_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getSurveyQuestions.php";
+    public static final String save_survey_answers="https://codebloodedinnovators.000webhostapp.com/public static final String get_survey_answers";
+    //News
+    public static final String get_news="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/News/news.php";
+
+    public static final String upload_report="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Reporting/AppUploadedImage/upload.php";
+
+
 
 }
