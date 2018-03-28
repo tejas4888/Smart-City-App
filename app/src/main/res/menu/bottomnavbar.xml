@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/my_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home"
+        app:showAsAction="always|withText"/>
+
+    <item
+        android:id="@+id/my_projects"
+        android:icon="@drawable/ic_description_black_24dp"
+        android:title="Projects/Events"
+        app:showAsAction="always|withText"/>
+
+    <item
+        android:id="@+id/my_reports"
+        android:icon="@drawable/ic_remove_red_eye_black_24dp"
+        android:title="Reports"
+        app:showAsAction="always|withText"/>
+
+    <item
+        android:id="@+id/my_watchlist"
+        android:icon="@drawable/ic_watch_later_black_24dp"
+        android:title="Watchlist"
+        app:showAsAction="always|withText"/>
+
+    <item
+        android:id="@+id/my_update"
+        android:icon="@drawable/ic_autorenew_black_24dp"
+        android:title="Update"
+        app:showAsAction="always|withText"/>
+
+</menu>

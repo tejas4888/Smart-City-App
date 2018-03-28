@@ -44,39 +44,10 @@
     </group>
 
     <item
-        android:id="@+id/nav_myprofile"
+        android:id="@+id/nav_myaccount"
         android:icon="@drawable/ic_person_black_24dp"
-        android:title="My Profile" >
+        android:title="My Account" />
 
-        <menu>
-        <group android:id="@+id/nav_view_group3"
-            android:checkableBehavior="single">
-
-            <item
-                android:id="@+id/nav_myprojects"
-                android:icon="@drawable/ic_description_black_24dp"
-                android:title="My Projects/ Events">
-            </item>
-            <item
-                android:id="@+id/nav_myreports"
-                android:icon="@drawable/ic_remove_red_eye_black_24dp"
-                android:title="My Reports">
-            </item>
-            <item
-                android:id="@+id/nav_watchlist"
-                android:icon="@drawable/ic_timer_black_24dp"
-                android:title="Watch List">
-            </item>
-            <item
-                android:id="@+id/nav_updateprofile"
-                android:icon="@drawable/ic_person_black_24dp"
-                android:title="Update Profile">
-            </item>
-
-        </group>
-        </menu>
-
-    </item>
     <item
         android:id="@+id/nav_contactus"
         android:icon="@drawable/ic_chat_black_24dp"
