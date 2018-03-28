@@ -70,6 +70,24 @@
 
    </RadioGroup>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        android:id="@+id/userdetails_address_edittext"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City"
+        android:id="@+id/userdetails_city_edittext"/>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email notifications"
+        android:id="@+id/userdetails_mail_checkbox"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
