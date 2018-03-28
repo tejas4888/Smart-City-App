@@ -45,6 +45,7 @@ public class ProjectType1RecyclerAdapter extends RecyclerView.Adapter<ProjectTyp
         holder.title_textview.setText(arrayList.get(position).title);
         Picasso.get().load(arrayList.get(position).img_url).into(holder.project_imageview);
 
+        holder.projectid_textview.setText("Project ID: "+arrayList.get(position).id);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,10 +72,13 @@ public class ProjectType1RecyclerAdapter extends RecyclerView.Adapter<ProjectTyp
         TextView department_textview,title_textview;
         ImageView project_imageview;
         CardView cardView;
+        TextView projectid_textview;
+
         public ViewHolder(View itemView) {
             super(itemView);
 
             department_textview=itemView.findViewById(R.id.project_type1_item_departmenttext);
+            projectid_textview=itemView.findViewById(R.id.project_type1_item_id_text);
             title_textview=itemView.findViewById(R.id.project_type1_item_titletext);
             project_imageview=itemView.findViewById(R.id.project_type1_item_image);
             cardView=itemView.findViewById(R.id.project_type1_item_cardview);
