@@ -4,14 +4,20 @@
 
     <item
         android:id="@+id/my_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="Home"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="Details"
         app:showAsAction="always|withText"/>
 
     <item
         android:id="@+id/my_projects"
         android:icon="@drawable/ic_description_black_24dp"
         android:title="Projects/Events"
+        app:showAsAction="always|withText"/>
+
+    <item
+        android:id="@+id/my_innovation"
+        android:icon="@drawable/ic_flare_black_24dp"
+        android:title="Innovation"
         app:showAsAction="always|withText"/>
 
     <item
@@ -24,12 +30,6 @@
         android:id="@+id/my_watchlist"
         android:icon="@drawable/ic_watch_later_black_24dp"
         android:title="Watchlist"
-        app:showAsAction="always|withText"/>
-
-    <item
-        android:id="@+id/my_update"
-        android:icon="@drawable/ic_autorenew_black_24dp"
-        android:title="Update"
         app:showAsAction="always|withText"/>
 
 </menu>

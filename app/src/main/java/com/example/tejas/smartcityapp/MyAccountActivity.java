@@ -10,9 +10,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.tejas.smartcityapp.Fragments.MyHomeFragment;
+import com.example.tejas.smartcityapp.Fragments.MyInnovationFragment;
 import com.example.tejas.smartcityapp.Fragments.MyProjectsFragment;
 import com.example.tejas.smartcityapp.Fragments.MyReportsFragment;
-import com.example.tejas.smartcityapp.Fragments.MyUpdateFragment;
 import com.example.tejas.smartcityapp.Fragments.MyWatchlistFragment;
 
 public class MyAccountActivity extends AppCompatActivity {
@@ -37,6 +37,12 @@ public class MyAccountActivity extends AppCompatActivity {
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     return true;
+                case R.id.my_innovation:
+                    fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.bottom_container, new MyInnovationFragment());
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                    return true;
                 case R.id.my_reports:
                     fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.bottom_container, new MyReportsFragment());
@@ -46,12 +52,6 @@ public class MyAccountActivity extends AppCompatActivity {
                 case R.id.my_watchlist:
                     fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.bottom_container, new MyWatchlistFragment());
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
-                    return true;
-                case R.id.my_update:
-                    fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.bottom_container, new MyUpdateFragment());
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     return true;
