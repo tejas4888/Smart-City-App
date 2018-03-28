@@ -4,7 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_margin"
+
+
     tools:background="#00AA00">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="top|center_horizontal"
+        android:minHeight="@dimen/text_section_min_height"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_margin"
+        android:id="@+id/onboarder_heading">
+
+        <TextView
+            android:id="@+id/tv_onboarder_title"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            tools:text="Section Title"
+            android:paddingTop="40dp"
+            android:textSize="26dp"
+
+            />
+
+    </LinearLayout>
+
+
 
 
     <FrameLayout
@@ -13,7 +42,8 @@
         android:layout_above="@+id/linlayText"
         android:layout_alignParentTop="true"
         android:layout_margin="@dimen/activity_margin"
-        tools:background="#FF0000">
+        tools:background="#FF0000"
+        android:layout_below="@id/onboarder_heading">
 
 
         <ImageView
@@ -24,8 +54,10 @@
             android:adjustViewBounds="true"
             android:contentDescription="@null"
             android:scaleType="fitCenter"
+
             tools:background="@drawable/img6" />
     </FrameLayout>
+
 
     <LinearLayout
         android:id="@+id/linlayText"
@@ -39,13 +71,7 @@
         android:padding="@dimen/activity_margin"
         tools:background="#660000FF">
 
-        <TextView
-            android:id="@+id/tv_onboarder_title"
-            style="@style/TextAppearance.AppCompat.Headline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            tools:text="Section Title" />
+
 
         <TextView
             android:id="@+id/tv_onboarder_description"
@@ -56,6 +82,7 @@
             android:alpha="0.7"
             android:gravity="center"
             android:textColor="@color/white"
-            tools:text="A long description about my application." />
+            tools:text="A long description about my application."
+            android:textSize="18dp"/>
     </LinearLayout>
 </RelativeLayout>

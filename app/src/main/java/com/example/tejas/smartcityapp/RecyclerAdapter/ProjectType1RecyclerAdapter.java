@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.tejas.smartcityapp.AlertDetailsActivity;
 import com.example.tejas.smartcityapp.Items.ProjectType1Item;
 import com.example.tejas.smartcityapp.ProjectType1DetailsActivity;
 import com.example.tejas.smartcityapp.R;
