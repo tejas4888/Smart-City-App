@@ -13,11 +13,30 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <ImageView
             android:id="@+id/project_type1_item_image"
             android:scaleType="fitXY"
             android:layout_width="match_parent"
             android:layout_height="200dp"/>
+
+            <TextView
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:paddingLeft="8dp"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:paddingRight="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Project ID"
+                android:id="@+id/project_type1_item_id_text"
+                android:layout_alignBottom="@id/project_type1_item_image" />
+
+        </RelativeLayout>
 
         <LinearLayout
             android:padding="8dp"

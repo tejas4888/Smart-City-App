@@ -6,8 +6,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.transition.Fade;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -172,6 +174,17 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (itemId == R.id.nav_news){
+
+            NewsFragment newsFragment=new NewsFragment();
+
+            Fade enterFade = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                enterFade=new Fade();
+                enterFade.setStartDelay(1000);
+                enterFade.setDuration(2000);
+                newsFragment.setEnterTransition(enterFade);
+            }
+
             getSupportFragmentManager().popBackStackImmediate();
             fragmentTransaction.replace(R.id.main_fragment_container, new NewsFragment());
             fragmentTransaction.addToBackStack(null).commit();
@@ -183,7 +196,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (itemId == R.id.nav_reporting) {
             Intent intent = new Intent(MainActivity.this, ReportFillActivity.class);
-            startActivity(intent);
+            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this).toBundle());
         }
         else if (itemId == R.id.nav_myprojects){
             getSupportFragmentManager().popBackStackImmediate();
