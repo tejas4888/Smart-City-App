@@ -10,7 +10,6 @@ public class AppConstants {
     public static final String CURRENT_USER="CURRENT_USER";
     public static final String FAVOURITES_PROJECT_TYPE1="FAVOURITES_PROJECT_TYPE1";
 
-
     public static final String add_user="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Login/add_user.php";
     public static final String get_user="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Login/get_user.php";
 
@@ -27,18 +26,20 @@ public class AppConstants {
 
     public static final String get_type1_project_statistics="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Projects/getViewInterestsMatches.php";
 
+    //Innovation
+    public static final String upload_innovation_idea="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Innovation/AppUploadedImage/upload.php";
 
     //Alerts
     public static final String get_alerts_list="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/getAlertsList.php";
     public static final String get_alerts_details="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/alerts_details.php";
     public static final String get_alerts_contacts="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/alerts_contacts.php";
 
-
     //Polls, Surveys Queries
     public static final String get_poll_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getPollQuestions.php";
     public static final String save_poll_answers="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/savePollResult.php";
     public static  final String get_survey_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getSurveyQuestions.php";
     public static final String save_survey_answers="https://codebloodedinnovators.000webhostapp.com/public static final String get_survey_answers";
+
     //News
     public static final String get_news="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/News/news.php";
 

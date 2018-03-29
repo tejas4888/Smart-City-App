@@ -31,10 +31,11 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme" />
         <activity android:name=".ReportFillActivity" />
-        <activity android:name=".AlertDetailsActivity"></activity>
+        <activity android:name=".AlertDetailsActivity" />
         <activity
             android:name=".MyAccountActivity"
-            android:label="@string/title_activity_my_account"></activity>
+            android:label="@string/title_activity_my_account" />
+        <activity android:name=".InnovationFillActivity"></activity>
     </application>
 
 </manifest>

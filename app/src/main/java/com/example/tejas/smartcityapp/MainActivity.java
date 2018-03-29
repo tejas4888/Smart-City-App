@@ -172,7 +172,8 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (itemId == R.id.nav_innovation){
-
+            Intent intent = new Intent(MainActivity.this, InnovationFillActivity.class);
+            startActivity(intent);
         }
         else if (itemId == R.id.nav_news){
 
