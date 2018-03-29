@@ -1,13 +1,34 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tejas.smartcityapp.Fragments.MainFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.synnapps.carouselview.CarouselView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="270dp"
+        android:id="@+id/fragment_main_carousel"
+        app:indicatorMarginVertical="8dp"
+        app:slideInterval="4000"/>
 
-</FrameLayout>
+    <android.support.v7.widget.CardView
+        app:cardElevation="8dp"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_main_city_description"/>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
+</ScrollView>

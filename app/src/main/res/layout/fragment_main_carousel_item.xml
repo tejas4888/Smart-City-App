@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:attribute="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/carousel_item_linear_container"
+    android:layout_height="match_parent">
+
+    <developer.shivam.crescento.CrescentoContainer
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        attribute:curvature="24dp"
+        android:elevation="8dp">
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/carousel_item_kenburns"
+            />
+
+    </developer.shivam.crescento.CrescentoContainer>
+
+</LinearLayout>
