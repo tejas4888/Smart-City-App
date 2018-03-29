@@ -12,10 +12,10 @@ import com.example.tejas.smartcityapp.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyUpdateFragment extends Fragment {
+public class MyInnovationFragment extends Fragment {
 
 
-    public MyUpdateFragment() {
+    public MyInnovationFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class MyUpdateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_update, container, false);
+        return inflater.inflate(R.layout.fragment_my_innovation, container, false);
     }
 
 }
