@@ -39,7 +39,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-auth:11.0.4'
     compile 'com.android.support:design:26.1.0'
     compile 'de.hdodenhof:circleimageview:2.2.0'
-    compile 'com.flaviofaria:kenburnsview:1.0.7'
+    //compile 'com.flaviofaria:kenburnsview:1.0.7'
     compile 'net.gotev:uploadservice:2.1'
     compile 'com.github.developer-shivam:Crescento:1.2.1'
     compile 'com.synnapps:carouselview:0.1.4'

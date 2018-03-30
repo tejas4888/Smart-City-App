@@ -12,7 +12,7 @@
         attribute:curvature="24dp"
         android:elevation="8dp">
 
-        <com.flaviofaria.kenburnsview.KenBurnsView
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/carousel_item_kenburns"

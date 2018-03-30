@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,6 +88,7 @@ public class SurveyRecyclerAdapter extends RecyclerView.Adapter<SurveyRecyclerAd
                 if ((rate = holder.rating.getRating()) > 0){
                     text = holder.editText.getText();
                     submitAnswer(holder, position, String.valueOf(rate), text.toString());
+                    Log.v("HELLOOOOOOOOOOO", "BUGGGGG" );
                 }
                 else {
                     Toast.makeText(context,"Select one option", Toast.LENGTH_SHORT).show();
@@ -138,7 +140,7 @@ public class SurveyRecyclerAdapter extends RecyclerView.Adapter<SurveyRecyclerAd
                 super.onPostExecute(s);
                 progressDialog.dismiss();
 
-                if (Integer.parseInt(s) == 2){
+                if (s.equals("2")){
                     // To remove other options from the card
                     holder.rating.setIsIndicator(TRUE);
                     holder.answered_textview.setVisibility(View.VISIBLE);
@@ -148,11 +150,11 @@ public class SurveyRecyclerAdapter extends RecyclerView.Adapter<SurveyRecyclerAd
 
                     Toast.makeText(context,"Submitted", Toast.LENGTH_SHORT).show();
                 }
-                else if (Integer.parseInt(s) == 1){
+                else if (s.equals("1")){
                     Toast.makeText(context,"Server Error", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(context,"Already submitted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
                 }
             }
 

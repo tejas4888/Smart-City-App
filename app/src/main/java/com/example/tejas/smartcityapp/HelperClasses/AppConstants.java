@@ -12,6 +12,7 @@ public class AppConstants {
 
     public static final String add_user="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Login/add_user.php";
     public static final String get_user="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Login/get_user.php";
+    public static final String update_user="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/MyAccount/update_user.php";
 
     //Home Screen
     public static final String get_projects_main="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Home/getProjects.php";
@@ -42,13 +43,12 @@ public class AppConstants {
     public static final String get_poll_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getPollQuestions.php";
     public static final String save_poll_answers="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/savePollResult.php";
     public static  final String get_survey_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getSurveyQuestions.php";
-    public static final String save_survey_answers="https://codebloodedinnovators.000webhostapp.com/public static final String get_survey_answers";
+    public static final String save_survey_answers="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/saveSurveyAnswers.php";
 
     //News
     public static final String get_news="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/News/news.php";
 
     public static final String upload_report="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Reporting/AppUploadedImage/upload.php";
-
 
 
 }
