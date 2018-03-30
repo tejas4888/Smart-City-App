@@ -210,6 +210,34 @@
 
         </android.support.v7.widget.CardView>
 
+        <android.support.v7.widget.CardView
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Volunteering Disclaimer"/>
+
+                <TextView
+                    android:id="@+id/alert_detail_volunteer_disclaimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is title here"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
         <Button
             android:id="@+id/alert_detail_volunteer_btn"
             android:layout_margin="8dp"

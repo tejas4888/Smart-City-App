@@ -37,7 +37,7 @@ public class AlertDetailsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    TextView title,area,date,time,description,guidelines,helpline;
+    TextView title,area,date,time,description,guidelines,helpline,volunteer_disclaimer;
     ImageView call,add_contact;
     Button volunteer_button;
 
@@ -54,6 +54,7 @@ public class AlertDetailsFragment extends Fragment {
         description=(TextView)view.findViewById(R.id.alert_detail_description);
         guidelines=(TextView)view.findViewById(R.id.alert_detail_guidelines);
         helpline=(TextView)view.findViewById(R.id.alert_detail_helpline);
+        volunteer_disclaimer=(TextView)view.findViewById(R.id.alert_detail_volunteer_disclaimer) ;
 
         call=(ImageView)view.findViewById(R.id.alert_detail_call_img);
         add_contact=(ImageView)view.findViewById(R.id.alert_detail_add_contact_img);
@@ -67,6 +68,7 @@ public class AlertDetailsFragment extends Fragment {
         description.setText(getActivity().getIntent().getStringExtra("description"));
         guidelines.setText(getActivity().getIntent().getStringExtra("guidelines"));
         helpline.setText(getActivity().getIntent().getStringExtra("helpline"));
+        volunteer_disclaimer.setText(getActivity().getIntent().getStringExtra("disclaimer"));
 
         call.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +117,8 @@ public class AlertDetailsFragment extends Fragment {
                 progressDialog.dismiss();
                 if (s.equals("0")) {
                     Toast.makeText(getActivity(), "Already Volunteered!", Toast.LENGTH_SHORT).show();
+                }else if(s.equals("1")){
+                    Toast.makeText(getActivity(), "You're now a volunteer!", Toast.LENGTH_SHORT).show();
                 }
             }
 
