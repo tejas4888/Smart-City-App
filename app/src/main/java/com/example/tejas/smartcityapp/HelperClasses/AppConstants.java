@@ -35,8 +35,8 @@ public class AppConstants {
 
     //Alerts
     public static final String get_alerts_list="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/getAlertsList.php";
-    public static final String get_alerts_details="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/alerts_details.php";
-    public static final String get_alerts_contacts="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/alerts_contacts.php";
+    public static final String add_volunteers="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/addVolunteer.php";
+    public static final String get_volunteers="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/Alerts/getVolunteer.php";
 
     //Polls, Surveys Queries
     public static final String get_poll_questions="https://codebloodedinnovators.000webhostapp.com/SmartCityApp/PollsSurveys/getPollQuestions.php";
