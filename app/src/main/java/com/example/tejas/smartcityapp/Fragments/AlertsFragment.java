@@ -83,14 +83,19 @@ public class AlertsFragment extends Fragment {
                     for (int i = 0; i < feeds.length(); i++) {
                         JSONObject c = feeds.getJSONObject(i);
 
-                        String project_id = c.getString("alert_id");
-                        String title = c.getString("date");
-                        String description = c.getString("time");
-                        String department = c.getString("title");
-                        String city = c.getString("area");
-                        String img_url = c.getString("type");
+                        String alert_id = c.getString("alert_id");
+                        String date = c.getString("date");
+                        String time = c.getString("time");
+                        String title = c.getString("title");
+                        String area = c.getString("area");
+                        String type = c.getString("type");
+                        String description = c.getString("description");
+                        String guidelines = c.getString("guidelines");
+                        String helpline = c.getString("helpline");
+                        String disclaimer = c.getString("disclaimer");
 
-                        AlertItem object = new AlertItem(project_id,title,description,department,city,img_url);
+                        AlertItem object = new AlertItem(alert_id,date,time,title,area,type,description,
+                                guidelines,helpline,disclaimer);
                         items.add(object);
                     }
 

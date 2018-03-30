@@ -56,12 +56,20 @@ public class AlertsRecyclerAdapter extends RecyclerView.Adapter<AlertsRecyclerAd
 
                     Intent intent=new Intent(context, AlertDetailsActivity.class);
                     intent.putExtra("alert_id",arrayList.get(position).alert_id);
-                    context.startActivity(intent);
+                    intent.putExtra("date",arrayList.get(position).date);
+                    intent.putExtra("time",arrayList.get(position).time);
+                    intent.putExtra("title",arrayList.get(position).title);
+                    intent.putExtra("area",arrayList.get(position).area);
+                    intent.putExtra("type",arrayList.get(position).type);
+                    intent.putExtra("description",arrayList.get(position).description);
+                    intent.putExtra("guidelines",arrayList.get(position).guidelines);
+                    intent.putExtra("helpline",arrayList.get(position).helpline);
+                    intent.putExtra("disclaimer",arrayList.get(position).disclaimer);
+
+                context.startActivity(intent);
 
             }
         });
-
-
     }
 
     @Override
