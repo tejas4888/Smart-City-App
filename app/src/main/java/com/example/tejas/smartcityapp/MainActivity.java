@@ -202,9 +202,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, MyAccountActivity.class);
             startActivity(intent);
         }
-        else if (itemId == R.id.nav_contactus){
 
-        }
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

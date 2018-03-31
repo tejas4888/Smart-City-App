@@ -44,8 +44,4 @@
         android:icon="@drawable/ic_person_black_24dp"
         android:title="My Account" />
 
-    <item
-        android:id="@+id/nav_contactus"
-        android:icon="@drawable/ic_chat_black_24dp"
-        android:title="Contact Us" />
 </menu>
