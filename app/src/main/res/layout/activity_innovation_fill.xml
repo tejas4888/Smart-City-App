@@ -4,44 +4,67 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <TextView
-        android:layout_marginTop="24dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload your Idea"
-        android:textSize="24dp"
-        android:layout_gravity="center_horizontal"/>
-
-    <TextView
+    <android.support.v7.widget.CardView
+        android:layout_margin="8dp"
+        android:padding="4dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="File Name will appear here"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/activity_innovation_fill_filename"
-        />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/activity_innovation_fill_upload_document"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="UPLOAD DOCUMENT"/>
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <EditText
-        android:id="@+id/activity_innovation_fill_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Title"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Upload your Idea"
+                android:textSize="24dp"
+                android:layout_gravity="center_horizontal"/>
 
-    <EditText
-        android:id="@+id/activity_innovation_fill_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Description"/>
+            <TextView
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="File Name will appear here"
+                android:id="@+id/activity_innovation_fill_filename"
+                />
 
-    <Button
-        android:id="@+id/activity_innovation_fill_upload_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Upload"/>
+            <Button
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:id="@+id/activity_innovation_fill_upload_document"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SELECT DOCUMENT"/>
+
+            <EditText
+                android:id="@+id/activity_innovation_fill_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"/>
+
+            <EditText
+                android:id="@+id/activity_innovation_fill_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"/>
+
+            <Button
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:id="@+id/activity_innovation_fill_upload_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Upload"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
 
 </LinearLayout>
