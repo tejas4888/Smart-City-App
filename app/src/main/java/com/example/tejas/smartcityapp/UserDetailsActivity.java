@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.example.tejas.smartcityapp.HelperClasses.AppConstants;
 import com.example.tejas.smartcityapp.HelperClasses.RequestHandler;
@@ -89,6 +90,7 @@ public class UserDetailsActivity extends AppCompatActivity {
                     contact=editText_contact.getText().toString();
                 }else
                 {
+                    Toast.makeText(UserDetailsActivity.this, "Please Enter contact!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -125,6 +127,7 @@ public class UserDetailsActivity extends AppCompatActivity {
                     if (!checkBox1.isChecked() && !checkBox2.isChecked() && !checkBox3.isChecked() && !checkBox4.isChecked() &&
                             !checkBox5.isChecked() )
                     {
+                        Toast.makeText(UserDetailsActivity.this, "Please fill a choice!", Toast.LENGTH_SHORT).show();
                         return;
                     }
                 }
@@ -132,8 +135,7 @@ public class UserDetailsActivity extends AppCompatActivity {
                 String address_text="";
                 String email_notification="";
 
-                if (editText_address.getText().toString().length()==0)
-                {
+                if (editText_address.getText().toString().length()==0) {
                     return;
                 }else{
                     address_text=editText_address.getText().toString();

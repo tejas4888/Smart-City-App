@@ -69,10 +69,15 @@ public class InnovationFillActivity extends AppCompatActivity {
                 String title = String.valueOf(editText_title.getText());
                 String description = String.valueOf(editText_description.getText());
 
+                if (title.length()==0 || description.length()==0)
+                {
+                    Toast.makeText(InnovationFillActivity.this, "Please Enter all the fields!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 uploadMultipart(user_id,title,description);
             }
         });
-
     }
 
     public void showFileChooser()
