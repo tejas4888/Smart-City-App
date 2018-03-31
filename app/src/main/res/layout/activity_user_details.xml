@@ -35,6 +35,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android" >
 
         <LinearLayout
+            android:padding="8dp"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
