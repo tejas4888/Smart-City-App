@@ -18,10 +18,6 @@
             android:icon="@drawable/ic_warning_black_24dp"
             android:title="Alerts" />
         <item
-            android:id="@+id/nav_events"
-            android:icon="@drawable/ic_event_black_24dp"
-            android:title="@string/events" />
-        <item
             android:id="@+id/nav_innovation"
             android:icon="@drawable/ic_flare_black_24dp"
             android:title="Innovation" />
