@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tejas.smartcityapp.HelperClasses.AppConstants;
@@ -36,6 +37,8 @@ public class InnovationFillActivity extends AppCompatActivity {
     private static final int STORAGE_PERMISSION_CODE = 123;
     private Uri filePath;
 
+    TextView filename_textview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +51,8 @@ public class InnovationFillActivity extends AppCompatActivity {
 
         upload_document_btn=(Button)findViewById(R.id.activity_innovation_fill_upload_document);
         upload_idea_btn=(Button)findViewById(R.id.activity_innovation_fill_upload_btn);
+
+        filename_textview=(TextView)findViewById(R.id.activity_innovation_fill_filename);
 
         upload_document_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +89,25 @@ public class InnovationFillActivity extends AppCompatActivity {
 
         if (requestCode == PICK_PDF_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             filePath = data.getData();
+            filename_textview.setText(getName(filePath));
         }
+    }
+
+    public String getName(Uri uri)
+    {
+        String name = String.valueOf(uri);
+        int index=0;
+
+        for (int i=name.length()-1;i>=0;i--)
+        {
+            if (name.charAt(i)=='/')
+            {
+                index=i+1;
+                break;
+            }
+        }
+
+        return name.substring(index);
     }
 
     private void requestStoragePermission() {
@@ -125,7 +148,6 @@ public class InnovationFillActivity extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                Log.v("Hello",""+filePath);
             }
 
             @Override
@@ -138,29 +160,14 @@ public class InnovationFillActivity extends AppCompatActivity {
 
                     String uploadId = UUID.randomUUID().toString();
 
-                    String id="";
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
-                        id = DocumentsContract.getDocumentId(filePath);
-                    }
-                    final Uri contentUri = ContentUris.withAppendedId(
-                            Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
-
-                    String[] projection = { MediaStore.Images.Media.DATA };
-                    Cursor cursor = getContentResolver().query(contentUri, projection, null, null, null);
-                    int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-                    cursor.moveToFirst();
-                    String pdf_path = cursor.getString(column_index);
-                    Log.v("PDF_PATH",""+pdf_path);
-
-                    if (pdf_path==null)
+                    if (path==null)
                     {
-                        Log.v("COMPLETED","Hello "+pdf_path);
+                        Log.v("COMPLETED","Hello "+path);
                     }
                     else
                     {
                         Log.v("SUCCESS",path);
                     }
-
 
                     new MultipartUploadRequest(InnovationFillActivity.this, uploadId, AppConstants.upload_innovation_idea)
                             .addFileToUpload(path, "image") //Adding file
