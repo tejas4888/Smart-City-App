@@ -1,10 +1,14 @@
 package com.example.tejas.smartcityapp;
 
+import android.content.ContentUris;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -66,7 +70,6 @@ public class InnovationFillActivity extends AppCompatActivity {
 
     }
 
-
     public void showFileChooser()
     {
         Intent intent = new Intent();
@@ -122,6 +125,7 @@ public class InnovationFillActivity extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
+                Log.v("Hello",""+filePath);
             }
 
             @Override
@@ -134,14 +138,29 @@ public class InnovationFillActivity extends AppCompatActivity {
 
                     String uploadId = UUID.randomUUID().toString();
 
-                    if (path==null)
+                    String id="";
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                        id = DocumentsContract.getDocumentId(filePath);
+                    }
+                    final Uri contentUri = ContentUris.withAppendedId(
+                            Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
+
+                    String[] projection = { MediaStore.Images.Media.DATA };
+                    Cursor cursor = getContentResolver().query(contentUri, projection, null, null, null);
+                    int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+                    cursor.moveToFirst();
+                    String pdf_path = cursor.getString(column_index);
+                    Log.v("PDF_PATH",""+pdf_path);
+
+                    if (pdf_path==null)
                     {
-                        Log.v("COMPLETED","Hello "+path);
+                        Log.v("COMPLETED","Hello "+pdf_path);
                     }
                     else
                     {
                         Log.v("SUCCESS",path);
                     }
+
 
                     new MultipartUploadRequest(InnovationFillActivity.this, uploadId, AppConstants.upload_innovation_idea)
                             .addFileToUpload(path, "image") //Adding file
@@ -170,6 +189,4 @@ public class InnovationFillActivity extends AppCompatActivity {
         //getting the actual path of the image
 
     }
-
-
 }
