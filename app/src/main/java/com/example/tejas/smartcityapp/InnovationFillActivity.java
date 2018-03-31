@@ -1,10 +1,14 @@
 package com.example.tejas.smartcityapp;
 
+import android.content.ContentUris;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -14,6 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tejas.smartcityapp.HelperClasses.AppConstants;
@@ -32,6 +37,8 @@ public class InnovationFillActivity extends AppCompatActivity {
     private static final int STORAGE_PERMISSION_CODE = 123;
     private Uri filePath;
 
+    TextView filename_textview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +51,8 @@ public class InnovationFillActivity extends AppCompatActivity {
 
         upload_document_btn=(Button)findViewById(R.id.activity_innovation_fill_upload_document);
         upload_idea_btn=(Button)findViewById(R.id.activity_innovation_fill_upload_btn);
+
+        filename_textview=(TextView)findViewById(R.id.activity_innovation_fill_filename);
 
         upload_document_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +75,6 @@ public class InnovationFillActivity extends AppCompatActivity {
 
     }
 
-
     public void showFileChooser()
     {
         Intent intent = new Intent();
@@ -81,7 +89,25 @@ public class InnovationFillActivity extends AppCompatActivity {
 
         if (requestCode == PICK_PDF_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             filePath = data.getData();
+            filename_textview.setText(getName(filePath));
         }
+    }
+
+    public String getName(Uri uri)
+    {
+        String name = String.valueOf(uri);
+        int index=0;
+
+        for (int i=name.length()-1;i>=0;i--)
+        {
+            if (name.charAt(i)=='/')
+            {
+                index=i+1;
+                break;
+            }
+        }
+
+        return name.substring(index);
     }
 
     private void requestStoragePermission() {
@@ -170,6 +196,4 @@ public class InnovationFillActivity extends AppCompatActivity {
         //getting the actual path of the image
 
     }
-
-
 }
