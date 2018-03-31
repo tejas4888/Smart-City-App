@@ -1,97 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <EditText
+<LinearLayout android:layout_marginTop="60dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        android:layout_margin="8dp"
+        android:padding="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Profile"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        app:cardElevation="4dp"
+        android:layout_margin="8dp"
+        android:padding="4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter contact number:"
-        android:id="@+id/userdetails_editText_Contact"/>
-
-   <RadioGroup
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
-
-       <RadioButton
-           android:checked="true"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="@string/login_citizen"
-           android:id="@+id/userdetails_radio1"/>
-
-       <RadioButton
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="@string/login_organisation"
-           android:id="@+id/userdetails_radio2"/>
+        xmlns:android="http://schemas.android.com/apk/res/android" >
 
         <LinearLayout
             android:orientation="vertical"
-            android:visibility="gone"
-            android:id="@+id/userdetails_checkLayout"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp">
+            android:layout_width="match_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android" >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter contact number:"
+                android:id="@+id/userdetails_editText_Contact"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:checked="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_citizen"
+                    android:id="@+id/userdetails_radio1"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_organisation"
+                    android:id="@+id/userdetails_radio2"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/userdetails_checkLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login_tech_org"
+                        android:id="@+id/userdetails_check_1"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login_fin_org"
+                        android:id="@+id/userdetails_check_2"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login_infra_org"
+                        android:id="@+id/userdetails_check_3"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login_research_institute"
+                        android:id="@+id/userdetails_check_4"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login_foreign"
+                        android:id="@+id/userdetails_check_5"/>
+
+
+                </LinearLayout>
+
+            </RadioGroup>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
+                android:id="@+id/userdetails_address_edittext"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:id="@+id/userdetails_city_edittext"/>
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/login_tech_org"
-                android:id="@+id/userdetails_check_1"/>
+                android:text="Email notifications"
+                android:id="@+id/userdetails_mail_checkbox"/>
 
-            <CheckBox
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/login_fin_org"
-                android:id="@+id/userdetails_check_2"/>
-
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/login_infra_org"
-                android:id="@+id/userdetails_check_3"/>
-
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/login_research_institute"
-                android:id="@+id/userdetails_check_4"/>
-
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/login_foreign"
-                android:id="@+id/userdetails_check_5"/>
-
+                android:text="Submit"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:id="@+id/userdetails_btnSubmit"/>
 
         </LinearLayout>
-
-   </RadioGroup>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Address"
-        android:id="@+id/userdetails_address_edittext"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="City"
-        android:id="@+id/userdetails_city_edittext"/>
-
-    <CheckBox
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Email notifications"
-        android:id="@+id/userdetails_mail_checkbox"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/userdetails_btnSubmit"/>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>
