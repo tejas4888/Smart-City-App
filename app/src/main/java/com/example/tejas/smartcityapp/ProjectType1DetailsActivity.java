@@ -194,18 +194,17 @@ public class ProjectType1DetailsActivity extends AppCompatActivity {
                 if (s.equals("0"))
                 {
                     Toast.makeText(ProjectType1DetailsActivity.this, "Already Submitted!", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(ProjectType1DetailsActivity.this, "Submission Successful!", Toast.LENGTH_SHORT).show();
+                }else {
+                    if (from == 0) {
+                        SharedPreferences prefs = getSharedPreferences(AppConstants.FAVOURITES_PROJECT_TYPE1, MODE_PRIVATE);
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putString(project_id, "1");
+                        editor.commit();
+                        Toast.makeText(ProjectType1DetailsActivity.this, "Added to WatchList!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(ProjectType1DetailsActivity.this, "Submission Successful!", Toast.LENGTH_SHORT).show();
+                    }
                 }
-
-                if (from==0)
-                {
-                    SharedPreferences prefs = getSharedPreferences(AppConstants.FAVOURITES_PROJECT_TYPE1, MODE_PRIVATE);
-                    SharedPreferences.Editor editor=prefs.edit();
-                    editor.putString(project_id,"1");
-                    editor.commit();
-                }
-
             }
 
             @Override

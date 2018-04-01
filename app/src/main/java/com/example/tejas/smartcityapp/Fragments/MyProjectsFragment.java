@@ -53,7 +53,7 @@ public class MyProjectsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_project_type1, container, false);
 
-        Toast.makeText(getActivity(),"HERE",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(),"HERE",Toast.LENGTH_SHORT).show();
         items=new ArrayList<ProjectType1Item>();
 
         recyclerView=(RecyclerView)view.findViewById(R.id.fragment_project_type1_recyclerview);
@@ -61,8 +61,10 @@ public class MyProjectsFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         new MyProjectsFragment.GetProjectList().execute();
         filter_fab=(FloatingActionButton)view.findViewById(R.id.fragment_project_type1_filter_fab);
-
+        filter_fab.setVisibility(View.GONE);
+        /*
         filter_fab.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 View bottomSheetView = getLayoutInflater().inflate(R.layout.fragment_filter_bottom_sheet, null);
@@ -111,7 +113,7 @@ public class MyProjectsFragment extends Fragment {
                 });
             }
         });
-
+        */
         return view;
     }
 

@@ -150,7 +150,7 @@ public class ProjectType1Fragment extends Fragment {
                         String description = jo.getString("description");
                         String department = jo.getString("department");
                         String city = jo.getString("city");
-                        String image = jo.getString("image");
+                        String image = "https://codebloodedinnovators.000webhostapp.com/SmartCityApp/mygov_projects.png";
 
                         items.add(new ProjectType1Item(project_id,title,description,department,city,image));
                     }
@@ -199,7 +199,7 @@ public class ProjectType1Fragment extends Fragment {
                 String description = jo.getString("description");
                 String department = jo.getString("department");
                 String city = jo.getString("city");
-                String image = jo.getString("image");
+                String image = "https://codebloodedinnovators.000webhostapp.com/SmartCityApp/mygov_projects.png";
 
                 items.add(new ProjectType1Item(project_id,title,description,department,city,image));
             }
@@ -245,7 +245,7 @@ public class ProjectType1Fragment extends Fragment {
                         String description = c.getString("description");
                         String department = c.getString("department");
                         String city = c.getString("city");
-                        String img_url = c.getString("image");
+                        String img_url = "https://codebloodedinnovators.000webhostapp.com/SmartCityApp/mygov_projects.png";
 
                         ProjectType1Item object = new ProjectType1Item(project_id,title,description,department,city,img_url);
 

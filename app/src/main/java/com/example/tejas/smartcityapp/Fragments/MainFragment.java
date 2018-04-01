@@ -25,6 +25,7 @@ import com.example.tejas.smartcityapp.Items.ProjectType1Item;
 import com.example.tejas.smartcityapp.R;
 import com.example.tejas.smartcityapp.RecyclerAdapter.ProjectType1RecyclerAdapter;
 //import com.flaviofaria.kenburnsview.KenBurnsView;
+import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ViewListener;
 
@@ -92,7 +93,7 @@ public class MainFragment extends Fragment {
             LinearLayout carousel_linear_container=(LinearLayout) getActivity().findViewById(R.id.carousel_item_linear_container);
 
             View carouselItemView=getActivity().getLayoutInflater().inflate(R.layout.fragment_main_carousel_item,carousel_linear_container,false);
-            ImageView carousel_image = carouselItemView.findViewById(R.id.carousel_item_kenburns);
+            KenBurnsView carousel_image = carouselItemView.findViewById(R.id.carousel_item_kenburns);
 
             if (position==0)
             {

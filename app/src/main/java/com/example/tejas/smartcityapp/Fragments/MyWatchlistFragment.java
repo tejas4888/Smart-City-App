@@ -54,7 +54,7 @@ public class MyWatchlistFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_project_type1, container, false);
 
-        Toast.makeText(getActivity(),"HERE",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(),"HERE",Toast.LENGTH_SHORT).show();
         items=new ArrayList<ProjectType1Item>();
 
         recyclerView=(RecyclerView)view.findViewById(R.id.fragment_project_type1_recyclerview);
@@ -63,6 +63,9 @@ public class MyWatchlistFragment extends Fragment {
         new MyWatchlistFragment.GetProjectList().execute();
         filter_fab=(FloatingActionButton)view.findViewById(R.id.fragment_project_type1_filter_fab);
 
+        filter_fab.setVisibility(View.GONE);
+
+        /*
         filter_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,7 +117,7 @@ public class MyWatchlistFragment extends Fragment {
                 });
             }
         });
-
+            */
         return view;
     }
 
